@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="imagem/png" href="../img/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <script src="../js/vanilla.js"></script>
+  <title>Lista JS</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-inverse">
+    <p>Lista JAVASCRIPT</p>
+  </nav>
+
+  <section class="container">
+    <div class="topo col-12">
+      <p style="color:rgb(39, 39, 39);">Exercícios JS</p>
+    </div>
+    <hr>
+  </section>
+
+  <!--LISTAGEM DOS CARROS-->
+  <section class="container ">
+    <div class="col-xs-12 p-3 mb-2 bg-secondary text-white">
+      <h4>Exercício 1:</h4>
+      <p>
+        Crie um programa que receba um valor numérico de um formulário (POST) e exiba na tela se o valor é POSITIVO,
+        NEGATIVO ou IGUAL A ZERO.
+      </p>
+      <form action="" class="d-flex justify-content-center">
+        <input type="number" id="ex1" placeholder="Digite aqui o valor!">
+        <button type="button" class="btn btn-primary" onclick="exer1()">Enviar</button>
+      </form>
+      <p id="e1"></p>
+    </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="col-xs-12 p-3 mb-2 bg-white text-dark">
+      <h4>Exercício 2:</h4>
+      <p>
+        Crie um programa que ao receber um valor numérico de um formulário (GET) exiba a tabuada desse número na tela.
+      </p>
+      <form action="" class="d-flex justify-content-center">
+        <input type="number" min="1" id="ex2" placeholder="Digite aqui o valor!">
+        <button type="button" class="btn btn-primary" onclick="exer2()">Enviar</button>
+      </form>
+      <div id="e2" class="d-flex justify-content-center">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="col-xs-12 p-3 mb-2 bg-secondary text-white">
+      <h4>Exercício 3:</h4>
+      <p>
+        Crie um algoritmo para cálculo do IMC de uma pessoa.
+      </p>
+      <form>
+        <input type="float" id="altura" placeholder="Altura : 1.7 (Metros)" />
+        <input type="float" id="peso" placeholder="Peso : 80 (kg)" />
+        <button type="button" class="btn btn-primary" onclick="exer3()">Enviar</button>
+      </form>
+      <div id="e3" class="d-flex justify-content-center">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="col-xs-12 p-3 mb-2 bg-white text-dark">
+      <h4>Exercício 4:</h4>
+      <p>
+        Escreva um algoritmo para receber de um formulário o custo de fábrica de um carro, calcular e exibir o custo
+        final do consumidor.
+      </p>
+      <form action="" class="d-flex justify-content-center">
+        <input type="text" id="ex4" placeholder="Exemplo: 100000.00" />
+        <button type="button" class="btn btn-primary" onclick="exer4()">Enviar</button>
+      </form>
+      <div id="e4" class="d-flex justify-content-center">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="col-xs-12 p-3 mb-2 bg-secondary text-white">
+      <h4>Exercício 5:</h4>
+      <p>
+        Escreva um algoritmo para receber de um formulário o salário mensal atual de um 
+        funcionário e o percentual de reajuste. Calcule e exiba o valor do novo salário.
+      </p>
+      <form>
+        <input type="text" id="salario" placeholder="Salário Mensal : 1500.00" />
+        <input type="text" id="reajuste" placeholder="Reajuste : 5%" />
+        <button type="button" class="btn btn-primary" onclick="exer5()">Enviar</button>
+      </form>
+      <div id="e5" class="d-flex justify-content-center">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <script src="./js/scripts.js"></script>
+</body>
+
+</html>
