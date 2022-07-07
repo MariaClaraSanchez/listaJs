@@ -1,0 +1,21 @@
+body{
+    background-image: url("../img/fundo.jpg");
+    width: 100%;
+    background-size: 700px 700px;
+}
+
+.titulo{
+    color: #fbfcfc;
+    font-size: 50px;
+}
+
+.subtitulo{
+    color:#fbfcfc;
+}
+
+.topo{
+    text-align: center;
+    background-color: #db8b5a;
+    padding: 6% 6%;
+    margin-bottom: 20px;
+}
