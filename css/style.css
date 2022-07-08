@@ -19,3 +19,22 @@ body{
     padding: 6% 6%;
     margin-bottom: 20px;
 }
+
+footer{
+    color: white;
+    background-color: #db8b5a;
+    text-align: center;
+    padding: 2% 10%;
+    margin-top: 2%;
+}
+
+.rodape{
+    display: flex;
+    text-align: left;
+    line-height: 10px;
+}
+
+.foto{
+    width: 20%;
+    border-radius: 50px;
+}
