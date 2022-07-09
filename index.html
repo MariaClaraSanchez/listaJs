@@ -26,9 +26,6 @@
     <p class="subtitulo">Lista de exercícios de <b>JavaScript</b> da matéria de Programação Web I</p>
   </nav>
 
-  
-
-  
   <section class="container ">
     <div class="col-xs-12 p-3 mb-2 bg-secondary text-white shadow-lg p-3 mb-5 rounded">
       <h4>Exercício 1</h4>
@@ -67,7 +64,7 @@
       <p>
         Crie um algoritmo para cálculo do IMC de uma pessoa.
       </p>
-      <form>
+      <form class="d-flex justify-content-center">
         <input type="float" id="altura" placeholder="Altura : 1.7 (Metros)" />
         <input type="float" id="peso" placeholder="Peso : 80 (kg)" />
         <button type="button" class="btn btn-primary" onclick="exer3()">Enviar</button>
@@ -102,7 +99,7 @@
         Escreva um algoritmo para receber de um formulário o salário mensal atual de um
         funcionário e o percentual de reajuste. Calcule e exiba o valor do novo salário.
       </p>
-      <form>
+      <form class="d-flex justify-content-center">
         <input type="text" id="salario" placeholder="Salário Mensal : 1500.00" />
         <input type="text" id="reajuste" placeholder="Reajuste : 5%" />
         <button type="button" class="btn btn-primary" onclick="exer5()">Enviar</button>
@@ -146,7 +143,7 @@
         que deverá ser acrescido de horas extras caso tenham sido
         trabalhadas (considere que o mês possua 4 semanas exatas sempre).
       </p>
-      <form>
+      <form class="d-flex justify-content-center">
         <input type="text" id="salario_hora" placeholder="Salário Hora : 40.0" />
         <input type="text" id="horas_trabalhadas" placeholder="Número de horas : 160" />
         <button type="button" class="btn btn-primary" onclick="exer7()">Enviar</button>
@@ -163,13 +160,13 @@
       <p>
         Crie um algoritmo que receba o salário fixo e o valor das vendas
         efetuadas pelo vendedor de uma empresa. Sabendo-se que ele
-        recebe uma comissão de 3% sobre o total das vendas até R$1.500,00 
+        recebe uma comissão de 3% sobre o total das vendas até R$1.500,00
         e mais 5% sobre a diferença (quando o total ultrapassar
         esse valor), calcule e exiba o seu salário atual.
       </p>
       <form action="" class="d-flex justify-content-center">
         <input type="text" id="salario8" placeholder="Salário  : R$ 40.0" />
-        <input type="text" id="vendas" placeholder="valor das vendas : R$ 10.0" />
+        <input type="text" id="vendas" placeholder="Valor Vendas : R$ 10.0" />
         <button type="button" class="btn btn-primary" onclick="exer8()">Enviar</button>
       </form>
       <div id="e8" class="d-flex justify-content-center">
@@ -187,8 +184,8 @@
         ser pago pelo cliente sabendo-se que o preço do litro da gasolina é
         R$ 3,30 e o preço do litro do álcool é R$ 2,90.
       </p>
-      <form>
-        <input type="number" min=1 id="litros" placeholder="Litros: 20" /></h3>
+      <form class="d-flex justify-content-center">
+        <input type="number" min=1 id="litros" placeholder="Litros: 20" />
         <select id="tipo">
           <option>Álcool</option>
           <option>Gasolina</option>
@@ -203,18 +200,52 @@
 
   <section class="container">
     <div class="col-xs-12 p-3 mb-2 bg-white text-dark shadow-lg p-3 mb-5 rounded">
-      <h4>Exercício 10</h4>
+      <h4>Exercício 11</h4>
       <p>
-        Com base nas informações acima, faça um algoritmo que receba: o
-        ano de nascimento do funcionário e o ano de ingresso na empresa.
-        O programa deverá exibir a idade e o tempo de trabalho do
-        empregado e a mensagem “REQUERER APOSENTADORIA” ou “NÃO
-        REQUERER APOSENTADORIA”.
+        Crie um formulário de cadastro simples com nome, email, cpf e
+        idade e exiba as informações preenchidas na tela quando o
+        formulário for submetido. Explique também como todo o processo
+        de envio de informações, processamento e resposta acontece na
+        comunicação entre cliente e servidor.
       </p>
       <form action="" class="d-flex justify-content-center">
-        <button type="button" class="btn btn-primary" onclick="exer8()">Enviar</button>
+        <input type="text" id="nome" placeholder="Seu nome">
+        <input type="text" id="email" placeholder="email@exemplo.com">
+        <input type="text" id="cpf" placeholder="xxx.xxx.xxx-xx">
+        <input type="number" id="idade" min="1" placeholder="30">
+        <button type="button" class="btn btn-primary" onclick="exer11()">Enviar</button>
       </form>
-      <div id="10" class="d-flex justify-content-center">
+      <div id="e11" class="d-flex justify-content-center"></div>
+      <div style="margin-top: 25px;">
+        <h3> Processo de envio de informações</h3>
+        <p>
+          <b>O processo de envio de informação funciona da seguinte forma: </b><br>
+
+          Temos um cliente que no caso é nossa aplicação
+          e o mesmo faz uma requisição para o servidor no caso dos exercícios aqui
+          todas as requisições do cliente foram feitas por um formulário no html, e depois é para mostrar
+          toda a página web é utilizado a linguagem JavaScript.
+          Esses dados quando realizamos o submit, ele fica na web service, ai na função do JavaScript esses dados
+          foram armazenados em variáveis, e depois utiliza-se uma função do JavaScript para renderizar isso na tela
+          em fora de html, passando todas as variáveis.
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="col-xs-12 p-3 mb-2 bg-secondary text-white shadow-lg p-3 mb-5 rounded">
+      <h4>Exercício 12</h4>
+      <h5 class="d-flex justify-content-center">Calculadora FLEX</h5>
+      <p class="d-flex justify-content-center"><img src="img/neutro.png" id="i12"></p>
+      <form class="d-flex justify-content-center">
+        <input type="text" id="etanol_12" placeholder="Etanol" />
+        <input type="text" id="gasolina_12" placeholder="Gasolina" />
+        <button type="button" class="btn btn-primary" style="margin: 0 10px;" onclick="exer12()">Vantagem</button>
+        <button type="reset" class="btn btn-primary" >Limpar</button>
+      </form>
+      <div id="e12" class="d-flex justify-content-center"> 
       </div>
     </div>
     </div>
@@ -223,27 +254,30 @@
   <script src="./js/scripts.js"></script>
 
 
-
   <footer>
     <div class="container rodape">
-        <div class="col-4 por">
-            <h2 style="margin-bottom: 20px;">Por</h2>
-            <p>Jádyla Cesário</p>
-            <p>Maria Clara Sanchez</p>
-        </div>
-        <div class="col-4 contato">
-            <h2 style="margin-bottom: 20px;">Contato</h2>
-            <p>jadyla.cesario@alunos.ifsuldeminas.edu.br</p>
-            <p>maria.sanchez@alunos.ifsuldeminas.edu.br</p>
-        </div>
-        <div class="col-4" style="margin-left: 8%;">
-            <h2 style="margin-bottom: 20px;">GitHub</h2>
-            <a href="https://github.com/Jadyla" target="_blank"><img class="foto" src="https://avatars.githubusercontent.com/u/89875948?v=4" alt="foto da integrante Jádyla" title="Jádyla"></a>
-            <a href="https://github.com/MariaClaraSanchez" target="_blank"><img class="foto" src="https://avatars.githubusercontent.com/u/57421273?v=4" alt="foto da integrante Maria" title="Maria Clara"></a>
-        </div>
+      <div class="col-4 por">
+        <h2 style="margin-bottom: 20px;">Por</h2>
+        <p>Jádyla Cesário</p>
+        <p>Maria Clara Sanchez</p>
+      </div>
+      <div class="col-4 contato">
+        <h2 style="margin-bottom: 20px;">Contato</h2>
+        <p>jadyla.cesario@alunos.ifsuldeminas.edu.br</p>
+        <p>maria.sanchez@alunos.ifsuldeminas.edu.br</p>
+      </div>
+      <div class="col-4" style="margin-left: 8%;">
+        <h2 style="margin-bottom: 20px;">GitHub</h2>
+        <a href="https://github.com/Jadyla" target="_blank"><img class="foto"
+            src="https://avatars.githubusercontent.com/u/89875948?v=4" alt="foto da integrante Jádyla"
+            title="Jádyla"></a>
+        <a href="https://github.com/MariaClaraSanchez" target="_blank"><img class="foto"
+            src="https://avatars.githubusercontent.com/u/57421273?v=4" alt="foto da integrante Maria"
+            title="Maria Clara"></a>
+      </div>
     </div>
-    
-</footer>
+
+  </footer>
 </body>
 
 </html>

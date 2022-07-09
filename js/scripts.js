@@ -230,7 +230,7 @@ function exer7() {
 function exer8() {
     let salario, vendas, total = 0, diferenca = 0;
 
-    salario = document.querySelector("#salario").value;
+    salario = document.querySelector("#salario8").value;
     vendas = document.querySelector("#vendas").value;
 
     if (!salario || !vendas) {
@@ -306,6 +306,92 @@ function exer9() {
 
 }
 
+//Exercício 10
+function exer10() {
+    let nascimento = parseInt(document.querySelector("#nascimento").value);
+    let ingesso = parseInt(document.querySelector("#ingresso").value);
+    let situacao = '';
+
+    if ((!nascimento) || (!ingesso)) {
+        document.querySelector("#e10").innerHTML = `
+        <p class="text-danger">Por favor digite um dos valores!!
+        </p>
+        `
+    }
+    else{
+        let idade_atual = 2022 - nascimento;
+        let tempo_servico = 2022 - ingesso;
+    
+        if ((idade_atual >= 65 || tempo_servico >= 30) || ((idade_atual >= 60 && tempo_servico >= 25))) {
+            
+            situacao = 'REQUERER APOSENTADORIA!';
+        }
+        else {
+            situacao = 'NÃO REQUERER APOSENTADORIA!';
+        }
+
+        document.querySelector("#e10").innerHTML = `
+        <p>O funcionário ${situacao}
+        </p>
+        `
+    }
+
+    limpar();
+}
+
+//Exercício 11
+function exer11() {
+    let nome = document.querySelector("#nome").value;
+    let email = document.querySelector("#email").value;
+    let cpf = document.querySelector("#cpf").value;
+    let idade = document.querySelector("#idade").value;
+
+
+    if (  (!nome) || (!email) || (!cpf) || (!idade) ){
+        document.querySelector("#e11").innerHTML = `
+        <p class="text-danger">Por favor digite um dos valores!!
+        </p>
+        `
+    }
+    else{
+        document.querySelector("#e11").innerHTML = `
+        <p> <br>
+        <b> Dados digitados </b> <br> <br>
+            <b>Nome : </b> ${nome} <br>
+            <b>Email : </b>${email} <br>
+            <b>CPF : </b>${cpf} <br>
+            <b>Idade : </b>${idade} <br>
+        </p>
+        `
+    }
+
+    limpar();
+}
+
+//Exercício 12
+function exer12() {
+    let etanol = parseFloat(document.querySelector("#etanol_12").value);
+    let gasolina = parseFloat(document.querySelector("#gasolina_12").value);
+
+    if ( (!etanol) || (!gasolina)){
+        document.querySelector("#e12").innerHTML = `
+        <p class="text-danger">Por favor digite um dos valores!!
+        </p>
+        `
+    }
+    else{
+        valor = (etanol/gasolina)*100;
+        if(valor>=70){
+            document.getElementById("i12").src = "./img/gasolina.png";
+        }else{
+            document.getElementById("i12").src = "./img/etanol.png";
+        }
+    }
+
+    limpar();
+}
+
+
 
 function limpar() {
     $("input").val("");
@@ -317,5 +403,6 @@ function limpar() {
     VMasker(document.getElementById("salario_hora")).maskMoney({ unit: 'R$' });
     VMasker(document.getElementById("salario8")).maskMoney({ unit: 'R$' });
     VMasker(document.getElementById("vendas")).maskMoney({ unit: 'R$' });
+
 })();
 
