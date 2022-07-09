@@ -4,6 +4,10 @@ body{
     background-size: 700px 700px;
 }
 
+button{
+    background-color: black;
+}
+
 .titulo{
     color: #fbfcfc;
     font-size: 50px;

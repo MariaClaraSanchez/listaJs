@@ -1,19 +1,26 @@
 //Exercício 1
 function exer1() {
     let valor = document.getElementById("ex1").value;
-    console.log(valor);
     let result = '';
+    console.log(valor)
+    if (valor == "") {
+        document.getElementById("e1").innerHTML = `
+        <p class="text-warning" >Número inválidos!<br> Por favor, digite corretamente!
+        </p>
+        `
+    } else {
+        if (valor < 0) {
+            result = ' NEGATIVO'
+        }
+        else if (valor > 0) {
+            result = ' POSITIVO'
+        }
+        else {
+            result = ' ZERO'
+        }
+        document.getElementById("e1").innerHTML = `O valor = <b>${valor}</b> é  <b>${result}</b>`;
+    }
 
-    if (valor < 0) {
-        result = 'NEGATIVO'
-    }
-    else if (valor > 0) {
-        result = 'POSITIVO'
-    }
-    else {
-        result = 'ZERO'
-    }
-    document.getElementById("e1").innerHTML = `O valor = <b>${valor}</b> é <b> ${result}</b>`;
 
     //Limpar forms
     limpar();
@@ -31,13 +38,13 @@ function exer2() {
             // console.log(tabuada)
         }
         document.getElementById("e2").innerHTML = `
-            <p>Tabuada do <b>${valor}:</b> <br> </p>
+            <p style="margin-top: 15px;">Tabuada do <b>${valor}:</b> <br> </p>
 
-            <p><br> ${tabuada}</p>
+            <p style="margin-top: 15px;"><br> ${tabuada}</p>
             `;
     } else {
         document.getElementById("e2").innerHTML = `
-        <p class="text-danger">Número inválido!</p>
+        <p class="text-danger" style="margin-top: 15px;">Número inválido!</p>
         `
     }
 
@@ -51,43 +58,47 @@ function exer3() {
     let peso = document.getElementById("peso").value;
 
 
-    if (altura == "" || peso == "") {
+    if (!altura || !peso) {
         document.getElementById("e3").innerHTML = `
-        <p class="text-warning">Números inválidos!<br> Por favor digite corretamente!
+        <p class="text-warning" style="margin-top: 15px;" >Números inválidos!<br> Por favor, digite corretamente!
         </p>
         `
-    }
-
-    console.log(altura + peso);
-
-    let IMC = peso / Math.pow(altura, 2);
-    IMC = Math.round(IMC * 100) / 100;
-
-    let situacao = '';
-
-    if (IMC < 18.8) {
-        situacao = "Você está abaixo do peso ideal";
-    }
-    else if (IMC >= 18.5 && IMC <= 24.9) {
-        situacao = "Parabéns – Você está em seu peso normal!"
-    }
-    else if (IMC >= 25.0 && IMC <= 29.9) {
-        situacao = "Você está acima de seu peso (sobrepeso)"
-    }
-    else if (IMC >= 30.0 && IMC <= 34.9) {
-        situacao = "Obesidade grau I"
-    }
-    else if (IMC >= 35.0 && IMC <= 39.9) {
-        situacao = "Obesidade grau II"
     }
     else {
-        situacao = "Obesidade grau III"
+        console.log(altura + peso);
+
+        let IMC = peso / Math.pow(altura, 2);
+        IMC = Math.round(IMC * 100) / 100;
+
+        let situacao = '';
+
+        if (IMC < 18.8) {
+            situacao = "Você está abaixo do peso ideal";
+        }
+        else if (IMC >= 18.5 && IMC <= 24.9) {
+            situacao = "Parabéns – Você está em seu peso normal!"
+        }
+        else if (IMC >= 25.0 && IMC <= 29.9) {
+            situacao = "Você está acima de seu peso (sobrepeso)"
+        }
+        else if (IMC >= 30.0 && IMC <= 34.9) {
+            situacao = "Obesidade grau I"
+        }
+        else if (IMC >= 35.0 && IMC <= 39.9) {
+            situacao = "Obesidade grau II"
+        }
+        else {
+            situacao = "Obesidade grau III"
+        }
+
+        document.getElementById("e3").innerHTML = `
+            <p style="margin-top: 15px;">Seu IMC é ${IMC} -  ${situacao}
+            </p>
+            `
+
     }
 
-    document.getElementById("e3").innerHTML = `
-        <p>Seu IMC é ${IMC} -  ${situacao}
-        </p>
-        `
+
     limpar();
 }
 
@@ -98,7 +109,7 @@ function exer4() {
 
     if (custoFabrica == "") {
         document.getElementById("e4").innerHTML = `
-        <p class="text-danger">Por favor digite o custo!!
+        <p class="text-danger" style="margin-top: 15px;">Por favor, digite o custo!!
         </p>
         `
     }
@@ -118,7 +129,7 @@ function exer4() {
         custo_total = custo_total.replaceAll('.', ',');
 
         document.getElementById("e4").innerHTML = `
-        <p>O custo final do consumidor é : R$ ${custo_total}
+        <p style="margin-top: 15px;">O custo final do consumidor é : R$ ${custo_total}
         </p>
         `
     }
@@ -133,7 +144,7 @@ function exer5() {
 
     if (salario == "" || reajuste == "") {
         document.getElementById("e5").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-warning" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
@@ -154,7 +165,7 @@ function exer5() {
         salario = salario.replaceAll('.', ',');
 
         document.getElementById("e5").innerHTML = `
-        <p>O salário final é : <b> R$ ${salario} </b>
+        <p style="margin-top: 15px;">O salário final é : <b> R$ ${salario} </b>
         </p>
         `
     }
@@ -170,14 +181,14 @@ function exer6() {
 
     if (!n1 || !n2 || !n3) {
         document.getElementById("e6").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-danger" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
     else {
         let media = (n1 + n2 + n3) / 3;
         console.log(media);
-        document.getElementById("e6").innerHTML = `<p>A média das notas é ${media}</p>`
+        document.getElementById("e6").innerHTML = `<p style="margin-top: 15px;">A média das notas é <b>${media}</b></p>`
     }
 
 }
@@ -189,7 +200,7 @@ function exer7() {
 
     if (!salario || !horas) {
         document.getElementById("e7").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-warning" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
@@ -219,7 +230,7 @@ function exer7() {
         salario_final = salario_final.replaceAll('.', ',');
 
         document.getElementById("e7").innerHTML = `
-        <p>O salário final é : <b> R$ ${salario_final} </b>
+        <p style="margin-top: 15px;">O salário final é : <b> R$ ${salario_final} </b>
         </p>
         `
     }
@@ -235,7 +246,7 @@ function exer8() {
 
     if (!salario || !vendas) {
         document.getElementById("e8").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-danger" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
@@ -258,7 +269,7 @@ function exer8() {
             total = salario + (0.03 * 1500) + (0.05 * diferenca);
         }
 
-        document.getElementById("e8").innerHTML = `<p>O salário será igual a R$ ${total}</p>`
+        document.getElementById("e8").innerHTML = `<p style="margin-top: 15px;">O salário será igual a R$ ${total}</p>`
     }
 
 }
@@ -274,7 +285,7 @@ function exer9() {
 
     if (!litro || !tipo) {
         document.getElementById("e9").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-warning" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
@@ -299,7 +310,7 @@ function exer9() {
         valor_pago = valor_pago.replaceAll('.', ',');
 
         document.getElementById("e9").innerHTML = `
-        <p>O valor pago foi : <b> R$ ${valor_pago} </b>
+        <p style="margin-top: 15px;">O valor pago foi : <b> R$ ${valor_pago} </b>
         </p>
         `
     }
@@ -314,16 +325,16 @@ function exer10() {
 
     if ((!nascimento) || (!ingesso)) {
         document.querySelector("#e10").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-danger" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
-    else{
+    else {
         let idade_atual = 2022 - nascimento;
         let tempo_servico = 2022 - ingesso;
-    
+
         if ((idade_atual >= 65 || tempo_servico >= 30) || ((idade_atual >= 60 && tempo_servico >= 25))) {
-            
+
             situacao = 'REQUERER APOSENTADORIA!';
         }
         else {
@@ -331,7 +342,7 @@ function exer10() {
         }
 
         document.querySelector("#e10").innerHTML = `
-        <p>O funcionário ${situacao}
+        <p style="margin-top: 15px;">O funcionário ${situacao}
         </p>
         `
     }
@@ -347,13 +358,13 @@ function exer11() {
     let idade = document.querySelector("#idade").value;
 
 
-    if (  (!nome) || (!email) || (!cpf) || (!idade) ){
+    if ((!nome) || (!email) || (!cpf) || (!idade)) {
         document.querySelector("#e11").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-warning" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
-    else{
+    else {
         document.querySelector("#e11").innerHTML = `
         <p> <br>
         <b> Dados digitados </b> <br> <br>
@@ -373,17 +384,17 @@ function exer12() {
     let etanol = parseFloat(document.querySelector("#etanol_12").value);
     let gasolina = parseFloat(document.querySelector("#gasolina_12").value);
 
-    if ( (!etanol) || (!gasolina)){
+    if ((!etanol) || (!gasolina)) {
         document.querySelector("#e12").innerHTML = `
-        <p class="text-danger">Por favor digite um dos valores!!
+        <p class="text-danger" style="margin-top: 15px;">Por favor, digite um dos valores!!
         </p>
         `
     }
-    else{
-        valor = (etanol/gasolina)*100;
-        if(valor>=70){
+    else {
+        valor = (etanol / gasolina) * 100;
+        if (valor >= 70) {
             document.getElementById("i12").src = "./img/gasolina.png";
-        }else{
+        } else {
             document.getElementById("i12").src = "./img/etanol.png";
         }
     }
@@ -391,6 +402,98 @@ function exer12() {
     limpar();
 }
 
+//Exercício 13
+exer13();
+
+function exer13() {
+
+    valor = Math.floor(Math.random() * 6 + 1)
+    switch (valor) {
+        case 1:
+            document.getElementById("i13").src = "./img/face1.png";
+            break;
+        case 2:
+            document.getElementById("i13").src = "./img/face2.png";
+            break;
+        case 3:
+            document.getElementById("i13").src = "./img/face3.png";
+            break;
+        case 4:
+            document.getElementById("i13").src = "./img/face4.png";
+            break;
+        case 5:
+            document.getElementById("i13").src = "./img/face5.png";
+            break;
+        case 6:
+            document.getElementById("i13").src = "./img/face6.png";
+            break;
+        default:
+            console.log('Número Inválido!');
+    }
+}
+
+//Exercício 15
+function exer15() {
+
+    data = document.querySelector("#date").value;
+
+    let [ano, mes, dia] = data.split('-');
+    let valor = "";
+    if (!ano || !mes || !dia) {
+        document.querySelector("#e15").innerHTML = `
+        <p class="text-warning" style="margin-top: 15px;">Por favor, digite um data!!
+        </p>
+        `
+    }
+    else {
+
+        switch (mes) {
+            case "01":
+                valor = 'Janeiro';
+                break;
+            case "02":
+                valor = 'Fevereiro';
+                break;
+            case "03":
+                valor = 'Março';
+                break;
+            case "04":
+                valor = 'Abril';
+                break;
+            case "05":
+                valor = 'Maio';
+                break;
+            case "06":
+                valor = 'Junho';
+                break;
+            case "07":
+                valor = 'Julho';
+                break;
+            case "08":
+                valor = 'Agosto';
+                break;
+            case "09":
+                valor = 'Setembro';
+                break;
+            case "10":
+                valor = 'Outubro';
+                break;
+            case "11":
+                valor = 'Novembro';
+                break;
+            case "12":
+                valor = 'Dezembro';
+                break;
+            default:
+                console.log('Data Inválida!');
+        }
+        document.querySelector("#e15").innerHTML = `
+        <p style="margin-top: 15px;"> 
+        ${dia} de ${valor} de ${ano}
+        </p>
+        `
+    }
+}
 
 
 function limpar() {
